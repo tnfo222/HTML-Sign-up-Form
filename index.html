@@ -14,15 +14,20 @@
         <h2>Vacation Contest Sign-Up Form</h2>
         <form method="GET" action="results.html">
             <div>
-                <label for="firstname">Your First Name</label>
-                <input type="text" id="firstname" name="firstname">
-                <label for="lastname">Your Last Name</label>
-                <input type="text" id="lastname" name="lastname">
+                <label for="firstname">Your First Name</label><span class="required-field">*</span>
+                <input type="text" id="firstname" name="firstname" minlength="2" maxlength="35" required>
+                <label for="lastname">Your Last Name</label><span class="required-field">*</span>
+                <input type="text" id="lastname" name="lastname" minlength="2" maxlength="35" required>
+                <label for="age">Your Age</label><span class="required-field">*</span>
+                <input type="number" name="age" id="age" min="21" max="120" required>
+                <h5>You must be of age 21 and older to enter the contest.</h5>
+                <label for="pwd"><em>Your Secret Code (must be 6 alphanumeric characters</em></label><span class="required-field">*</span>
+                <input type="password" id="pwd" name="pwd" title="6 Alphanumeric Character Passcode" pattern="[0-9a-zA-Z]{6}" required>
             </div>
             <fieldset>
                 <legend>Your Contact Info</legend>
-                <label for="email">Your Email</label>
-                <input type="text" id="email" name="email">
+                <label for="email">Your Email</label><span class="required-field">*</span>
+                <input type="email" id="email" name="email" required>
                 <label for="address">Your Address</label>
                 <input type="text" id="address" name="address">
                 <label for="city">City</label>
@@ -81,11 +86,11 @@
                     <option value="WY">Wyoming</option>
                 </datalist>
                 <label for="zip">Zip Code</label>
-                <input name="zip" id="zip" type="text">
+                <input name="zip" id="zip" type="text" pattern="[0-9]{5}" title="5-Digit US ZIP Code">
             </fieldset>
             <fieldset>
                 <legend>Your Preferences</legend>
-                <h3>Choose Your Prefered Location!</h3>
+                <h3>Choose Your Prefered Location!</h3> <!--Contestant can only select one destination-->
                 <div>
                     <label for="aruba">Aruba</label>
                     <input type="radio" id="aruba" name="location" value="Aruba">
@@ -107,23 +112,23 @@
                     <label for="color">Click to Choose Your Color</label>
                     <input type="color" id="color" name="color">
                 </div>
+
+                <!--Contestant can select one, two, or all extras-->
                 <h3>Choose Your Extras</h3>
                 <div>
                     <label for="sauna">Sauna</label>
-                    <input type="radio" id="sauna" name="extras" value="Sauna">
+                    <input type="checkbox" id="sauna" name="extras" value="Sauna">
                 </div>
                 <div>
                     <label for="hot-tub">In-Room Hot Tub</label>
-                    <input type="radio" id="hot-tub" name="extras" value="Hot Tub">
+                    <input type="checkbox" id="hot-tub" name="extras" value="Hot Tub">
                 </div>
                 <div>
                     <label for="slide">In-Room Slide</label>
-                    <input type="radio" id="slide" name="extras" value="Slide" checked>
+                    <input type="checkbox" id="slide" name="extras" value="Slide" checked>
                 </div>
             </fieldset>
-
             <input type="submit" value="Enter the Contest!">
-            <!-- TODO: Submit Button -->
         </form>
     </main>
     <footer>
